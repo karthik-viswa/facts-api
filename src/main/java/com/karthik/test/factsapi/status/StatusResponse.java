@@ -9,5 +9,5 @@ public class StatusResponse
 {
     Status status;
 
-    FactCounts counts;
+    FactCounts facts;
 }
