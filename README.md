@@ -10,7 +10,8 @@ To build and run:
   * `java -jar -Dtranslate.api.key=<API_KEY> build/libs/facts-api-0.0.1-SNAPSHOT.jar` where `<API_KEY>` is a google API key which is valid for the Google Translations API
 
 To use the API
-* Swagger documentation can be found at `http://localhost:8080/swagger-ui.html` * The API uses in-memory username/password authentication. Two roles are present: `ADMIN` and `USER`. Only the `ADMIN` role can check that application status at `http://localhost:8080/status` 
+* Swagger documentation can be found at `http://localhost:8080/swagger-ui.html` 
+* The API uses in-memory username/password authentication. Two roles are present: `ADMIN` and `USER`. Only the `ADMIN` role can check that application status at `http://localhost:8080/status` 
 You may use a rest client of your choice. The commands below use the `curl` command-line utility as an example
 * To use the API, first login as follows
   * `curl -X POST -d username=admin -d password=adminPass -c cookies.txt http://localhost:8080/login`
