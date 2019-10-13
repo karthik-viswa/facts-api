@@ -12,11 +12,11 @@ To build and run:
 To use the API
 * Swagger documentation can be found at `http://localhost:8080/swagger-ui.html` 
 * The API uses in-memory username/password authentication. Two roles are present: `ADMIN` and `USER`. Only the `ADMIN` role can check the application status at `http://localhost:8080/status` 
-You may use a rest client of your choice. The commands below use the `curl` command-line utility as an example
+* You may use a rest client of your choice. The commands below use the `curl` command-line utility as an example
 * To use the API, first login as follows
   * `curl -X POST -d username=admin -d password=adminPass -c cookies.txt http://localhost:8080/login`
   * To login as a non-admin user, use `username=user and password=userPass`
-* The application status can be checked (only by the `admin` user) using: `curl -b cookies.txt http://localhost:8080/status`. This return json showing the total number of facts fetched and the number of unique facts loaded into the application
+* The application status can be checked (only by the `admin` user) using: `curl -b cookies.txt http://localhost:8080/status`. This returns json showing the total number of facts fetched and the number of unique facts loaded into the application
   * If the status is `ERROR` this indicates a problem communicating with the random facts API and the Facts API jar may have to be restarted
 * The list of fact ids can be listed using: `curl -b cookies.txt http://localhost:8080/facts`
 * A single fact can be retrieved using `curl -b cookies.txt http://localhost:8080/facts/<factid>` where `<factid>` is the fact ID. This retrieves the fact in its original language
