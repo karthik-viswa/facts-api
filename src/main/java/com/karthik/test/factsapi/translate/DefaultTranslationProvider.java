@@ -44,13 +44,13 @@ public class DefaultTranslationProvider implements TranslationProvider
     {
         if(sourceLang == null)
         {
-            String message = String.format("Source language %s not recognised by translation provider. Cannot translate", sourceLanguage);
+            String message = String.format("Source language '%s' not recognised by translation provider. Cannot translate", sourceLanguage);
             throw new TranslationException(message);
         }
 
         if(targetLang == null)
         {
-            String message = String.format("Target language %s not recognised by translation provider. Cannot translate", targetLanguage);
+            String message = String.format("Target language '%s' not recognised by translation provider. Cannot translate", targetLanguage);
             throw new TranslationException(message);
         }
     }

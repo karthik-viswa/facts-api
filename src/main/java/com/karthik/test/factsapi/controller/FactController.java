@@ -29,7 +29,7 @@ public class FactController
        return FactRepository.getInstance().getFactIds();
     }
 
-    @GetMapping("/facts/{id}")
+    @GetMapping(value = "/facts/{id}", produces = "application/json;charset=UTF-8")
     public ResponseEntity<Fact> getFactById(@PathVariable String id, @RequestParam(required = false) String lang)
     {
         Optional<Fact> fact = FactRepository.getInstance().getFactById(id);
