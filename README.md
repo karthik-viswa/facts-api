@@ -6,7 +6,7 @@ To build and run:
 * Checkout the project
 * build the project using `gradlew clean build`
   * this produces an executable jar `build/libs/facts-api-0.0.1-SNAPSHOT.jar`
-* run the jar as follows
+* run the jar as follows (use Java 8)
   * `java -jar -Dtranslate.api.key=<API_KEY> build/libs/facts-api-0.0.1-SNAPSHOT.jar` where `<API_KEY>` is a google API key which is valid for the Google Translations API
 
 To use the API
