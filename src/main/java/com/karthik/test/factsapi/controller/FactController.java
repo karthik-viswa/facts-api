@@ -46,20 +46,20 @@ public class FactController
             return new ResponseEntity<>(foundFact, HttpStatus.OK);
         }
 
-        String translatedText;
+        // String translatedText;
 
-        try
-        {
-            translatedText = translateService.translate(foundFact.getText(), foundFact.getLanguage(), lang);
-        }
-        catch (TranslationException e)
-        {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
-        }
+        // try
+        // {
+        //     translatedText = translateService.translate(foundFact.getText(), foundFact.getLanguage(), lang);
+        // }
+        // catch (TranslationException e)
+        // {
+        //     throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+        // }
 
-        Fact translatedFact = createTranslatedFact(foundFact, translatedText, lang);
+        // Fact translatedFact = createTranslatedFact(foundFact, translatedText, lang);
 
-        return new ResponseEntity<>(translatedFact, HttpStatus.OK);
+        return new ResponseEntity<>(foundFact, HttpStatus.OK);
     }
 
     private Fact createTranslatedFact(Fact originalFact, String translatedText, String lang)

@@ -35,15 +35,16 @@ public class FactsLoader implements ApplicationRunner
         log.info("Loading random facts...");
         status = Status.LOADING;
 
-        for(fetchCount=0; fetchCount < 1000; fetchCount++)
+        for(fetchCount=0; fetchCount < 10; fetchCount++)
         {
             try
             {
+                Thread.sleep(50);
                 Fact fact = restTemplate.getForObject("https://uselessfacts.jsph.pl/random.json", Fact.class);
                 log.debug("Loaded fact: {}", fact);
                 factRepository.addFact(fact);
             }
-            catch(RestClientException e)
+            catch(RestClientException | InterruptedException e)
             {
                 status = Status.ERROR;
                 log.error("An exception occurred when attempting to fetch a random fact", e);

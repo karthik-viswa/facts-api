@@ -9,7 +9,7 @@ public class TranslateService
 {
     private TranslationProvider provider;
 
-    @Value("${translate.api.key}")
+    //@Value("${translate.api.key}")
     private String apiKey;
 
     public TranslateService()
